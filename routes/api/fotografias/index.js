@@ -86,7 +86,30 @@ router.post('/new', function(req, res){
 );// put :prdsku
 
 
-
+router.delete(
+    '/delete/:fotId',
+    function( req, res) {
+      fotCollection = fileModel.getFotografias();
+      var fotIdToDelete  = req.params.fotId;
+      var newFotCollection = fotCollection.filter(
+        function(o, i){
+          return fotIdToDelete !== o.id;
+        }
+      ); //filter
+      fotCollection = newFotCollection;
+      fileModel.setFotografias(
+        fotCollection,
+        function (err, savedSuccesfully) {
+          if (err) {
+            res.status(400).json({ "error": "No se pudo eliminar objeto" });
+          } else {
+            res.json({"newProdsQty":fotCollection.length});
+          }
+        }
+      );
+    }
+  );// delete
+  
 
 
   module.exports = router;

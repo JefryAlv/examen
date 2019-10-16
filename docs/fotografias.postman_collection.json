@@ -1,0 +1,169 @@
+{
+	"id": "82803816-568e-41bf-959e-367dfb7dd94c",
+	"name": "fotografias",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"110fa462-ee67-4522-9e24-f1a054fe9b74",
+		"c96a3923-ec1d-40e0-8778-a386788fd7aa",
+		"7583bfe8-c83a-43ad-9d68-bb78f6aa3828",
+		"e067fde4-634b-42c9-88d4-08e27e78f87d"
+	],
+	"folders_order": [],
+	"protocolProfileBehavior": {},
+	"folders": [],
+	"requests": [
+		{
+			"id": "110fa462-ee67-4522-9e24-f1a054fe9b74",
+			"name": "get",
+			"url": "http://localhost:3000/api/fot/all",
+			"description": "",
+			"data": [],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7583bfe8-c83a-43ad-9d68-bb78f6aa3828",
+			"name": "put",
+			"url": "http://localhost:3000/api/fot/update/001",
+			"description": "",
+			"data": [
+				{
+					"key": "ajustar",
+					"value": "ADD",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "tipo",
+					"value": "Niños2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c96a3923-ec1d-40e0-8778-a386788fd7aa",
+			"name": "post",
+			"url": "http://localhost:3000/api/fot/new",
+			"description": "",
+			"data": [
+				{
+					"key": "id",
+					"value": "001",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "Niños",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "url",
+					"value": "www.google.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "thumbnailUrl",
+					"value": "www.google2.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "album",
+					"value": "Niños2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataOptions": null,
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e067fde4-634b-42c9-88d4-08e27e78f87d",
+			"name": "delete",
+			"url": "http://localhost:3000/api/fot/delete/002",
+			"description": "",
+			"data": null,
+			"dataOptions": null,
+			"dataMode": null,
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
