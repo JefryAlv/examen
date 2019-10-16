@@ -24,7 +24,7 @@ router.post('/new', function(req, res){
        {},
        req.body,
        {
-           "title, ": req.body.title,
+           "title": req.body.title,
            "url": req.body.url,
            "thumbnailUrl": req.body.thumbnailUrl,
            "album": req.body.album
@@ -51,6 +51,42 @@ router.post('/new', function(req, res){
       res.status(400).json({"error":"No se pudo ingresar objeto"});
     }
   }); // post /new
+
+
+
+  router.put('/update/:foId',
+  function(req, res){
+      fotCollection = fileModel.getFotografias();
+      var foIdToModify = req.params.foId;
+      var amountToAdjust = parseInt(req.body.ajustar);
+      var adjustType = req.body.tipo || 'SUB';
+      var adjustHow = (adjustType == 'ADD' ? 1 : -1);
+      var modFotografias = {};
+      var newFotografiasArray = fotCollection.map(
+        function(o,i){
+          if( foIdToModify === o.id){
+             o.title = adjustType;
+             modFotografias = Object.assign({}, o);
+          }
+          return o;
+        }
+      ); // end map
+    fotCollection = newFotografiasArray;
+    fileModel.setFotografias(
+      fotCollection,
+      function (err, savedSuccesfully) {
+        if (err) {
+          res.status(400).json({ "error": "No se pudo actualizar objeto" });
+        } else {
+          res.json(modFotografias);  // req.body ===  $_POST[]
+        }
+      }
+    );
+  }
+);// put :prdsku
+
+
+
 
 
   module.exports = router;
